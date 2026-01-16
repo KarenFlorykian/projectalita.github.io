@@ -5,8 +5,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // For custom domain (elitea.ai), we don't need basePath
-  // All assets will be served from the root
+  // For GitHub Pages subfolder deployment (fork)
+  // Set basePath to the repository name
+  // For custom domain (upstream), this will be overridden by environment variable
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '/projectalita.github.io',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '/projectalita.github.io',
   webpack: (config, { isServer }) => {
     if (!isServer) {
       // Fix for mermaid cytoscape import issue

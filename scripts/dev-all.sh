@@ -25,9 +25,9 @@ trap cleanup SIGINT SIGTERM
 if ! command -v mkdocs &> /dev/null; then
     echo "⚠️  MkDocs not found. Installing dependencies..."
     if [ -f "requirements.txt" ]; then
-        pip install -r requirements.txt
+        pip3 install -r requirements.txt
     else
-        pip install mkdocs mkdocs-material mkdocs-glightbox
+        pip3 install mkdocs mkdocs-material mkdocs-glightbox
     fi
 fi
 
