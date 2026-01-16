@@ -56,6 +56,31 @@ export default function RolesSection() {
         'Bug report analysis'
       ]
     },
+    {
+      id: 'performance-test-engineer',
+      title: 'Performance Test Engineer',
+      description: 'Optimize application performance with AI-powered load testing, script generation, and intelligent anomaly detection.',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" 
+          />
+        </svg>
+      ),
+      color: 'bg-orange-500',
+      gradient: 'from-orange-500 to-amber-500',
+      darkGradient: 'dark:from-orange-400 dark:to-amber-400',
+      link: '/performance-testing',
+      capabilities: [
+        'AI-powered script generation & healing',
+        'Load modeling & performance analysis',
+        'Anomaly detection & root cause analysis',
+        'Test plan automation & validation'
+      ]
+    },
   ]
 
   return (
@@ -100,7 +125,7 @@ export default function RolesSection() {
         </motion.div>
 
         {/* Roles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {roles.map((role, index) => (
             <motion.div
               key={role.id}
