@@ -48,3 +48,7 @@ venv/
 __pycache__/
 *.pyc
 _deploy/
+
+# Spec-Kit scaffolding (regen on demand)
+.cursor/
+.specify/
