@@ -1,7 +1,10 @@
 name: Deploy Landing + Docs to GitHub Pages
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+  push:
+    branches:
+      - 001-performance-testing-workflow
 
 permissions:
   contents: read
@@ -16,8 +19,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name:  Checkout
+      - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: 001-performance-testing-workflow
 
       # Build Next.js Landing Page
       - name: Setup Node.js
@@ -76,8 +81,8 @@ jobs:
           # Add .nojekyll to prevent Jekyll processing
           touch _deploy/.nojekyll
           
-          # Add CNAME for custom domain
-          echo "elitea.ai" > _deploy/CNAME
+          # CNAME removed for fork deployment - only needed in upstream production
+          # Upstream uses: echo "elitea.ai" > _deploy/CNAME
           
           # Display structure for verification
           echo "Deployment structure:"
